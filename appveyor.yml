@@ -1,0 +1,26 @@
+version: '{build}'
+init:
+- cmd: >-
+    npm update -g
+    npm install -g cordova
+environment:
+  CertPWD: GrEC$2015
+install:
+- ps: >-
+    $secureString = convertto-securestring "GrEC`$2015" -asplaintext -force
+    $secureString2 = convertto-securestring "GrECo2017" -asplaintext -force
+    Import-PfxCertificate -FilePath C:\projects\gma\certification\certificate\GrECo.pfx -CertStoreLocation Cert:\CurrentUser\My -Password $secureString
+    Import-PfxCertificate -FilePath C:\projects\gma\certification\certificate\GrECo-winstore.pfx -CertStoreLocation Cert:\CurrentUser\My -Password $secureString2
+build_script:
+- cmd: >-
+    cd src
+    cordova platform add windows
+    cordova platform ls
+    cordova build --release windows --appx=uap --archs=arm
+before_deploy:
+- cmd: 7z a AppPackages.zip C:\projects\gma\src\platforms\windows\AppPackages\
+deploy:
+- provider: GitHub
+  auth_token:
+    secure: 01c1792017c925e5d6bd51f96f550ebc3b72a535
+  artifact: C:\projects\gma\src\AppPackages.zip
