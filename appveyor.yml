@@ -11,9 +11,9 @@ install:
     
     $secureString2 = convertto-securestring "GrECo2017" -asplaintext -force
     
-    Import-PfxCertificate -FilePath C:\projects\gma\certification\certificate\GrECo.pfx -CertStoreLocation Cert:\CurrentUser\My -Password $secureString
+    Import-PfxCertificate -FilePath C:\projects\windowsapp\certification\certificate\GrECo.pfx -CertStoreLocation Cert:\CurrentUser\My -Password $secureString
     
-    Import-PfxCertificate -FilePath C:\projects\gma\certification\certificate\GrECo-winstore.pfx -CertStoreLocation Cert:\CurrentUser\My -Password $secureString2
+    Import-PfxCertificate -FilePath C:\projects\windowsapp\certification\certificate\GrECo-winstore.pfx -CertStoreLocation Cert:\CurrentUser\My -Password $secureString2
 
     build_script:
 - cmd: >-
@@ -26,9 +26,9 @@ install:
     cordova build --release windows --appx=uap --archs=arm
     
 before_deploy:
-- cmd: 7z a AppPackages.zip C:\projects\gma\src\platforms\windows\AppPackages\
+- cmd: 7z a AppPackages.zip C:\projects\windowsapp\src\platforms\windows\AppPackages\
 deploy:
 - provider: GitHub
   auth_token:
     secure: 01c1792017c925e5d6bd51f96f550ebc3b72a535
-  artifact: C:\projects\gma\src\AppPackages.zip
+  artifact: C:\projects\windowsapp\src\AppPackages.zip
