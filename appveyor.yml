@@ -2,6 +2,7 @@ version: '{build}'
 init:
 - cmd: >-
     npm update -g
+    
     npm install -g cordova
 
 install:
