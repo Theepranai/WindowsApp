@@ -32,5 +32,5 @@ before_deploy:
 deploy:
 - provider: GitHub
   auth_token:
-    secure: 01c1792017c925e5d6bd51f96f550ebc3b72a535
+    secure: 17ac4d57fc3edbfa41830f8d5db354cf86788915
   artifact: C:\projects\windowsapp\src\AppPackages.zip
