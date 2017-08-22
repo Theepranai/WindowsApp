@@ -25,7 +25,7 @@ build_script:
     
     cordova build --release windows --appx=uap --archs=arm
     
-before_deploy:
+after_build:
 
 - cmd: >-
     7z a AppPackages.zip C:\projects\windowsapp\src\platforms\windows\AppPackages\
