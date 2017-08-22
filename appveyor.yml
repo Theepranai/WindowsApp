@@ -33,7 +33,7 @@ after_build:
     dir
 
 artifacts:
-  - path: C:\projects\windowsapp\src\AppPackages.zip
+  - path: \src\AppPackages.zip
     name: AppPackages
 
 deploy:
