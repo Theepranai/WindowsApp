@@ -27,7 +27,10 @@ build_script:
     
 before_deploy:
 
-- cmd: 7z a AppPackages.zip C:\projects\windowsapp\src\platforms\windows\AppPackages\
+- cmd: >-
+    7z a AppPackages.zip C:\projects\windowsapp\src\platforms\windows\AppPackages\
+    
+    dir
 
 artifacts:
   - path: \src\AppPackages.zip
