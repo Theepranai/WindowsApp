@@ -33,7 +33,7 @@ before_deploy:
     dir
 
 artifacts:
-  - path: \src\AppPackages.zip
+  - path: AppPackages.zip
     name: AppPackages
 
 deploy:
