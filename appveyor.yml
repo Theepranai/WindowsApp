@@ -29,14 +29,11 @@ before_deploy:
 
 - cmd: 7z a AppPackages.zip C:\projects\windowsapp\src\platforms\windows\AppPackages\
 
+artifacts:
+  - path: \src\AppPackages.zip
+    name: AppPackages
+
 deploy:
-  description: 'Release description'
   provider: GitHub
   auth_token:
-    secure: xAXPZfdZhu/tHAQUazH+7X66AElkJymfj9U4Kb7itHOomRl+15F2HMJWMyzeRLof
-  artifact: C:\projects\windowsapp\src\AppPackages.zip
-  draft: false
-  prerelease: false
-  on:
-    branch: master                
-    appveyor_repo_tag: true       
+    secure: oxm9WqOMy/COvMlnrIjcTmUJAPEXagyjLEls+6MqW+wlc6fUPuSm4/4spTDzVQBj
