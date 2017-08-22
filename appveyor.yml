@@ -23,6 +23,8 @@ build_script:
     
     cordova platform ls
     
+    cordova build
+    
     cordova build --release windows --appx=uap --archs=arm
     
 after_build:
