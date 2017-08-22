@@ -28,13 +28,13 @@ build_script:
 after_build:
 
 - cmd: >-
-    7z a AppPackages.zip C:\projects\windowsapp\src\platforms\windows\AppPackages\
+    7z a WindowsApp.zip C:\projects\windowsapp\src\platforms\windows\AppPackages\
     
     dir
 
 artifacts:
-  - path: \src\AppPackages.zip
-    name: AppPackages
+  - path: \src\WindowsApp.zip
+    name: WindowsApp
 
 deploy:
   provider: GitHub
